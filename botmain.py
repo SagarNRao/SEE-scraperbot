@@ -67,7 +67,7 @@ async def on_message(message):
             recommendations.append(to_append)
             df.to_csv('reee.csv', index=False)
 
-        await message.channel.send("Of course! Here are some recommendations!")
+        await message.channel.send("Of course! Heere are some recommendations!")
         for i in range(length):
             await message.channel.send(recommendations[i])
 
