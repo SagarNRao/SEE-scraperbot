@@ -72,4 +72,4 @@ async def on_message(message):
             await message.channel.send(recommendations[i])
 
 
-# client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))
