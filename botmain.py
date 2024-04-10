@@ -1,4 +1,7 @@
 import discord
+import os
+from dotenv import load_dotenv
+
 from discord.ext import commands
 import pywhatkit
 
@@ -70,6 +73,5 @@ async def on_message(message):
         await message.channel.send("Of course! Heere are some recommendations!")
         for i in range(length):
             await message.channel.send(recommendations[i])
-
 
 client.run(os.getenv('TOKEN'))
