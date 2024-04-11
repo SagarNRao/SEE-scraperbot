@@ -3,4 +3,5 @@
 local_temp
 __pycache__
 *.txt
+!requirements.txt
 *.json
