@@ -34,14 +34,12 @@ class Scraper:
     
     def get_videos(self):
         self.video_dict = {}
-        for vid in self.soup.find("span", id="video-title"):
-            self.write_file("wotDis.html", str(vid))
+        for vid in self.soup.find_all("span", id="video-title"):
             title = str(vid.string).strip()
-            href = vid.parent.parent.get('href')
-            self.video_dict[title] = href
-            self.video_list.append(str(vid.string).strip())
-        self.video_list = [' '.join(word for word in item.split() if not word.startswith('#')) for item in self.video_list]
-        video_json = json.dumps(self.video_list)
+            tag = vid.parent.parent
+            if 'href' in tag.attrs:
+                self.video_dict[title] = tag['href']
+        video_json = json.dumps(self.video_dict)
         self.write_file('vidlist.json', video_json)
         
         
