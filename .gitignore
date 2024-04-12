@@ -1,4 +1,4 @@
-*.env
+.env  
 *.html  
 local_temp
 __pycache__
