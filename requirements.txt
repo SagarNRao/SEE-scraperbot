@@ -1,2 +1,6 @@
 selenium
 beautifulsoup4
+html5lib
+youtube_transcript_api
+python-dotenv
+google-generativeai

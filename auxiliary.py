@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from youtube_transcript_api import YouTubeTranscriptApi
 from bs4 import BeautifulSoup
 import time
 import json
@@ -9,7 +10,6 @@ class Scraper:
     soup = ""
     page_title = ""
     links = []
-    video_list = []
     video_dict = {}
     
     
@@ -41,5 +41,10 @@ class Scraper:
                 self.video_dict[title] = tag['href']
         video_json = json.dumps(self.video_dict)
         self.write_file('vidlist.json', video_json)
+        
+    def get_transcript(self, vid_link):
+        video_id = vid_link.split("v=")[1]
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        return transcript
         
         
