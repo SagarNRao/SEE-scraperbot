@@ -3,9 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from youtube_transcript_api import YouTubeTranscriptApi
 from bs4 import BeautifulSoup
-import google.generativeai as genai
 from dotenv import load_dotenv, dotenv_values
 from youtube_transcript_api import YouTubeTranscriptApi
+import google.generativeai as genai
+import requests
 import os
 import time
 import json
